@@ -10,7 +10,6 @@ class Main extends Component {
         <div className="row">
           <div className="cols s12 routes-links">
             <ul>
-              <li><Link to="/">Home</Link></li>
               <li><Link to="contacts">Contacts</Link></li>
               <li><Link to="messages">Messages</Link></li>
             </ul>
@@ -18,7 +17,7 @@ class Main extends Component {
         </div>
         <div className="row">
           <div className="cols s12 routes-to">
-            <Route exact path="/"  />
+            <Route exact path="/" component={Contacts} />
             <Route path="/contacts" component={Contacts} />
             <Route path="/messages" component={Messages} />
           </div>
