@@ -2,24 +2,20 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import Contacts from './contacts';
 import Messages from './messages';
-
+import Notification from 'react-notify-toast';
 class Main extends Component {
   render() {
     return(
       <div className="container">
+      <Notification options={{zIndex: 5000}}></Notification>
         <div className="row">
           <div className="cols s12 routes-links">
-            <ul>
-              <li><Link to="contacts">Contacts</Link></li>
-              <li><Link to="messages">Messages</Link></li>
-            </ul>
           </div>
         </div>
         <div className="row">
           <div className="cols s12 routes-to">
             <Route exact path="/" component={Contacts} />
             <Route path="/contacts" component={Contacts} />
-            <Route path="/messages" component={Messages} />
           </div>
         </div>
       </div>

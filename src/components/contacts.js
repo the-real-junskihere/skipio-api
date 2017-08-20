@@ -18,6 +18,8 @@ class Contacts extends Component {
     this.sendMessageHandler = this.sendMessageHandler.bind(this);
   }
 
+
+
   componentWillMount() {
     this.props.dispatch(fetchUsersContacts());
   }

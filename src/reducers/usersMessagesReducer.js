@@ -4,12 +4,17 @@ export function usersMessagesReducer(state = {
     contact: {},
     modalStatus: null,
   },
-  reply: null,
+  sent: false,
+  error: false,
 }, action) {
   const newState = {...state};
   switch (action.type) {
     case 'MESSAGE_SENT': {
-      newState.reply = action.payload;
+      newState.sent = true;
+      break;
+    }
+    case 'ERROR_SENDING_MESSAGE': {
+      newState.error = true;
       break;
     }
     case 'SET_RECEPIENT': {
