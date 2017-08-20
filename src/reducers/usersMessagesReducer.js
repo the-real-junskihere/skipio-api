@@ -22,6 +22,10 @@ export function usersMessagesReducer(state = {
       newState.modalData.modalStatus = 'open';
       break;
     }
+    case 'RESET': {
+      newState.sent = false;
+      newState.error = false
+    }
     default: {
       console.log('Messages Loading');
     }

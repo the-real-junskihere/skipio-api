@@ -17,7 +17,9 @@ class Messages extends Component {
     if(this.props.sent && this.state.message !== '') {
         notify.show('Message Sent', 'success');
         this.refs.close.click();
+        this.props.dispatch({type: 'RESET'});
     } else if (this.props.error) {
+      this.props.dispatch({type: 'RESET'});
       notify.show('Message sending failed', 'error');
     }
   }
