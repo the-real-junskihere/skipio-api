@@ -1,9 +1,11 @@
 import request from 'superagent';
+import api from '../api-config.json';
+
 
 export function fetchUsersContacts() {
   return (dispatch) => {
     request
-    .get('https://stage.skipio.com/api/v2/contacts?token=d3ef07cd3fb17859a874b7854c84f0ec&page=1&per=10')
+    .get(`https://stage.skipio.com/api/v2/contacts?token=${api.token}&page=1&per=10`)
     .end((err, res) => {
       if (err) {
         dispatch({

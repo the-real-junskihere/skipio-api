@@ -1,4 +1,5 @@
 import request from 'superagent';
+import api from '../api-config.json';
 
 export function sendMessage(recipients , message) {
   const data = {
@@ -9,7 +10,7 @@ export function sendMessage(recipients , message) {
   };
   return (dispatch) => {
     request
-    .get('https://stage.skipio.com/api/v2/messages?token=d3ef07cd3fb17859a874b7854c84f0ec')
+    .get(`https://stage.skipio.com/api/v2/messages?token=${api.token}`)
     .send({data}) // sends a JSON post body
     .set('Accept', 'application/json')
     .end((err, res) => {
